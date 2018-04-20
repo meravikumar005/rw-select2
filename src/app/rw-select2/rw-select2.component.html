@@ -1,0 +1,20 @@
+<div class="rw-select-wrapper">
+  <div class="select-box">
+    <button class="select-button" (click) = "toggleSelectBox($event)">
+      <div class="text-box">
+          <span class="label">{{selectLable}}:</span>
+          <span class="text">{{selectedItem}}</span>
+      </div>
+      <span class="caret">&#9660;</span>
+    </button>
+    <!-- <div class="search-box"></div> -->
+    <div class="rw-select-list" *ngIf = "toggleSelect">
+      <ul>
+        <li *ngFor = "let list of dataList" (click) ="selectedValue(list)">
+          {{list.value}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

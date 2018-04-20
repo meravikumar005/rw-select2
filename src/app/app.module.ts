@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { RwSelect2Module } from "./rw-select2/rw.select2.module";
+
 
 import { AppComponent } from './app.component';
+
+
 
 
 @NgModule({
@@ -10,7 +14,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RwSelect2Module
   ],
   providers: [],
   bootstrap: [AppComponent]
