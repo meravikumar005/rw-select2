@@ -22,15 +22,6 @@
   },
   "homepage": "https://github.com/meravikumar005/rw-select2",
   "license": "MIT",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "package":"ng-packagr -p ng-package.json"
-  },
   "private": false,
   "peerDependencies": {
     "@angular/core": "^5.2.0",
@@ -55,5 +46,13 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
+  },
+  "main": "bundles/rw-select2.umd.js",
+  "module": "esm5/rw-select2.js",
+  "es2015": "esm2015/rw-select2.js",
+  "typings": "rw-select2.d.ts",
+  "metadata": "rw-select2.metadata.json",
+  "dependencies": {
+    "tslib": "^1.7.1"
   }
 }
