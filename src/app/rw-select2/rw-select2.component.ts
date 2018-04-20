@@ -17,7 +17,7 @@ export class RwSelect2Component implements OnInit {
   public dataList:any;
 
 
-  @Input() lable:string;
+  @Input() label:string;
   @Input() data:any;
   @Output() selected:EventEmitter<any> = new EventEmitter();
 
@@ -28,12 +28,13 @@ export class RwSelect2Component implements OnInit {
   }
 
   ngOnInit() {
-    this.selectLable = this.lable;
+    this.selectLable = this.label;
     this.dataList = this.data;
   }
 
   private outClick($event:Event):void {
-    if($event.target['classList'] == '') {
+    let classList = $event.target['classList'][0];
+    if(classList !== 'select-button' && classList !== 'text' && classList !== 'label' && classList !== 'caret' ) {
       this.toggleSelect = false;
     }
   };

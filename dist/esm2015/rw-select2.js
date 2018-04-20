@@ -19,7 +19,7 @@ class RwSelect2Component {
      * @return {?}
      */
     ngOnInit() {
-        this.selectLable = this.lable;
+        this.selectLable = this.label;
         this.dataList = this.data;
     }
     /**
@@ -27,7 +27,8 @@ class RwSelect2Component {
      * @return {?}
      */
     outClick($event) {
-        if ($event.target['classList'] == '') {
+        let /** @type {?} */ classList = $event.target['classList'][0];
+        if (classList !== 'select-button' && classList !== 'text' && classList !== 'label' && classList !== 'caret') {
             this.toggleSelect = false;
         }
     }
@@ -74,7 +75,7 @@ RwSelect2Component.decorators = [
 </div>
 
 `,
-                styles: [`@import url(https://fonts.googleapis.com/css?family=Oxygen);.rw-select-wrapper{width:100%;position:relative}.rw-select-wrapper .select-box .select-button{width:100%;min-height:36px;background-color:#fff;padding:5px 10px;border:1px solid #e6e6e6;cursor:pointer;text-overflow:ellipsis}.rw-select-wrapper .select-box .select-button .text-box{float:left}.rw-select-wrapper .select-box .select-button .text-box .text{font-family:Oxygen,sans-serif;font-size:13px;color:#333c48}.rw-select-wrapper .select-box .select-button .text-box .label{font-family:Oxygen,sans-serif;color:#7f8ea4}.rw-select-wrapper .select-box .select-button .caret{float:right}.rw-select-wrapper .select-box .select-button:focus{outline:0}.rw-select-wrapper .select-box .rw-select-list{-webkit-box-shadow:0 3px 6px 0 rgba(0,0,0,.16);box-shadow:0 3px 6px 0 rgba(0,0,0,.16);padding-top:6px;padding-bottom:8px}.rw-select-wrapper .select-box .rw-select-list ul{margin:0;padding:0}.rw-select-wrapper .select-box .rw-select-list ul li{font-family:Oxygen,sans-serif;font-size:14px;list-style:none;cursor:pointer;line-height:1.21;padding:10px;margin-bottom:4px}.rw-select-wrapper .select-box .rw-select-list ul li:hover{background-color:#3e53fb;color:#fff}.rw-select-wrapper .select-box .rw-select-list ul li:last-child{margin-bottom:0}`],
+                styles: [`@import url(https://fonts.googleapis.com/css?family=Oxygen);.rw-select-wrapper{width:100%;position:relative}.rw-select-wrapper .select-box .select-button{width:100%;min-height:36px;background-color:#fff;padding:5px 10px;border:1px solid #e6e6e6;cursor:pointer;text-overflow:ellipsis}.rw-select-wrapper .select-box .select-button .text-box{float:left}.rw-select-wrapper .select-box .select-button .text-box .text{font-family:Oxygen,sans-serif;font-size:13px;color:#333c48}.rw-select-wrapper .select-box .select-button .text-box .label{font-family:Oxygen,sans-serif;color:#7f8ea4}.rw-select-wrapper .select-box .select-button .caret{float:right}.rw-select-wrapper .select-box .select-button:focus{outline:0}.rw-select-wrapper .select-box .rw-select-list{-webkit-box-shadow:0 3px 6px 0 rgba(0,0,0,.16);box-shadow:0 3px 6px 0 rgba(0,0,0,.16);padding-top:6px;padding-bottom:8px;background-color:#fff}.rw-select-wrapper .select-box .rw-select-list ul{margin:0;padding:0}.rw-select-wrapper .select-box .rw-select-list ul li{font-family:Oxygen,sans-serif;font-size:14px;list-style:none;cursor:pointer;line-height:1.21;padding:10px;margin-bottom:4px}.rw-select-wrapper .select-box .rw-select-list ul li:hover{background-color:#3e53fb;color:#fff}.rw-select-wrapper .select-box .rw-select-list ul li:last-child{margin-bottom:0}`],
                 host: {
                     "(document:click)": "outClick($event)"
                 }
@@ -85,7 +86,7 @@ RwSelect2Component.ctorParameters = () => [
     { type: ElementRef, },
 ];
 RwSelect2Component.propDecorators = {
-    "lable": [{ type: Input },],
+    "label": [{ type: Input },],
     "data": [{ type: Input },],
     "selected": [{ type: Output },],
 };

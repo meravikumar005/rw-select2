@@ -5,7 +5,7 @@ export declare class RwSelect2Component implements OnInit {
     selectLable: string;
     selectedItem: string;
     dataList: any;
-    lable: string;
+    label: string;
     data: any;
     selected: EventEmitter<any>;
     constructor(el: ElementRef);
